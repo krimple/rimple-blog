@@ -1,0 +1,11 @@
+{
+  "name": "rimple-blog",
+  "scripts": {
+    
+    
+  },
+  "version": "1.0.0",
+  "description": "A Next.JS and GraphCMS blog for Rimple on Tech",
+  "main": "index.js",
+  "license": "MIT"
+}
