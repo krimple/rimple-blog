@@ -49,7 +49,6 @@ query blogPost($where: BlogWhereInput!) {
 export async function getPostKeys() {
   try {
     const result = await graphQLClient.request(GET_POST_GUIDS);
-    console.log('post guids', result);
     return result;
   } catch (e) {
     console.log('error!');
@@ -61,10 +60,9 @@ export async function getPostKeys() {
 export async function getPosts() {
   try {
     const result = await graphQLClient.request(GET_POSTS);
-    console.log(result);
     return result;
   } catch (e) {
-    console.dir(e);
+    console.error(e);
     return [];
   }
 }
@@ -78,15 +76,19 @@ export async function getPost(postSlug: string) {
         }
       });
 
-    if (result) {
-      return result[0];
+    // note: the result is returned with a key of the collection name
+    // and within that key is an array of results.
+    if (result?.blogPosts) {
+      return result.blogPosts[0];
     } else {
-      if (result.length === 0) {
+      if (result?.blogPosts.length === 0) {
         console.log('No post found with specified GUID');
         return null;
-      }
-      if (result.length > 1) {
-        console.log('More than one post with same slug.');
+      } else if (result?.blogPosts.length > 1) {
+        console.log('Too many posts with same GUID');
+        return null;
+      } else {
+        console.log('Unknown error');
         return null;
       }
     }
