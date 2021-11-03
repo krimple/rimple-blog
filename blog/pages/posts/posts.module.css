@@ -1,17 +1,50 @@
-.blogPosts table {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 1em;
-    border: 1px solid black;
+section.blogPosts {
+    padding: 2em;
+    background-color: #eee;
+    width: 80%;
+    margin-left: 10%;
 }
 
-.blogPosts th {
-    background-color: #ccc;
-    padding: 0;
-    margin: 0;
+.card {
+   padding: 0em 2em;
+   border:  black inset;
 }
 
-.blogPosts tbody tr {
-    margin: 0;
-    height: 1.5em;
+section.blogPost {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+section.blogPost h2 {
+    font-family: "Sans Serif", sans-serif;
+}
+
+section.blogPost .postBody {
+   font-family: serif;
+   font-size: 1rem;
+}
+
+.card h2 {
+    text-transform: uppercase;
+    font-family: Sans-Serif;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+}
+
+.card h2 a {
+    text-decoration: none;
+}
+
+.card pre {
+    background-color: white;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    font-family: Courier New;
+    font-size: .9em;
+    font-weight: bold;
 }

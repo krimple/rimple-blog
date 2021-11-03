@@ -1,5 +1,5 @@
 export default function Header() {
     return (
-        <h1>Ken's Stupid Blog</h1>
+        <h1>Ken&apos;s Stupid Blog</h1>
     );
 }

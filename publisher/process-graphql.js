@@ -23,6 +23,7 @@ mutation create($data: BlogCreateInput!) {
     id
     title
     tags
+    description
     postSlug
     published
     postTime
@@ -39,12 +40,13 @@ async function getPosts() {
     }
 }
 
-async function addPost(title, tags, postContent, postSlug, postTime, published) {
+async function addPost(title, tags, description, postContent, postSlug, postTime, published) {
   try {
     const result = await graphQLClient.request(ADD_POST, {
       data: {
         title,
         tags,
+        description,
         postContent,
         postSlug,
         postTime,

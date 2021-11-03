@@ -9,7 +9,7 @@ export default function Layout({ children }) {
     return (
         <>
             <Head>
-                <title>Ken's blog</title>
+                <title>Ken&apos;s blog</title>
             </Head>
 
             <section className={styles.container}>

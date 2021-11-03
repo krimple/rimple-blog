@@ -1,12 +1,16 @@
-import {getPosts, getPost, getPostKeys} from '../../../shared/graphql';
+import {getPost, getPostKeys} from '../../../shared/graphql';
+import styles from '../posts.module.css';
 
 export default function renderPost(request: any) {
   console.dir(request);
   const { post } = request;
    return (
-     <section className="blogPost">
-       <div className="title">
-         {post.title}
+     <section className={styles.blogPost}>
+       <h2>{post.title}</h2>
+       <hr/>
+       <div
+           className="postBody"
+           dangerouslySetInnerHTML={{__html: post.postContent}}>
        </div>
      </section>
    );

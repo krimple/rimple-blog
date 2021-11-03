@@ -27,6 +27,7 @@ const GET_POSTS = gql`
       blogPosts {
          id
          title
+         description
          postSlug
          postContent
          postTime
@@ -39,6 +40,7 @@ query blogPost($where: BlogWhereInput!) {
   blogPosts(where: $where) {
     id
     title
+    description
     postSlug
     postContent
     postTime

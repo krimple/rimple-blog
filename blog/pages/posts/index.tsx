@@ -5,25 +5,27 @@ import {getPosts} from '../../shared/graphql';
 export default function renderPosts(request: any) {
     console.dir(request);
     const { posts } = request;
-    const postRows = posts.blogPosts.map((p: any, index: number) => (
-       <tr key={`post-${p.postSlug}`}>
-           <td>{ p.title }</td>
-           <td><Link href={`/posts/${ p.postSlug }`}>{p.postSlug}</Link></td>
-       </tr>
-    ))
+    const cards = posts.blogPosts.map((post: any, index: number) => {
+
+        return (
+            <section className={styles.blogPosts} key={post.postSlug}>
+                <div className={styles.card}>
+                    <h2>
+                        <Link href={`/posts/${post.postSlug}`}>
+                            <a>{post.title}</a>
+                        </Link>
+                    </h2>
+                    <div className={styles.postBody}
+                        dangerouslySetInnerHTML={{__html: post.postContent}}>
+                    </div>
+                </div>
+            </section>
+        );
+    });
+
     return (
         <section className={styles.blogPosts}>
-            <table >
-                <thead>
-                  <th>Title</th>
-                  <th>Slug</th>
-                </thead>
-                <tbody>
-                { postRows }
-                </tbody>
-            </table>
-            <div className="title">
-            </div>
+            { cards}
         </section>
     );
 };
