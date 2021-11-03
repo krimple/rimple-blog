@@ -1,0 +1,17 @@
+.blogPosts table {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1em;
+    border: 1px solid black;
+}
+
+.blogPosts th {
+    background-color: #ccc;
+    padding: 0;
+    margin: 0;
+}
+
+.blogPosts tbody tr {
+    margin: 0;
+    height: 1.5em;
+}

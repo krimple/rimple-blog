@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './posts.module.css';
 import {getPosts} from '../../shared/graphql';
 
 export default function renderPosts(request: any) {
@@ -11,7 +12,7 @@ export default function renderPosts(request: any) {
        </tr>
     ))
     return (
-        <section className="blogPosts">
+        <section className={styles.blogPosts}>
             <table >
                 <thead>
                   <th>Title</th>

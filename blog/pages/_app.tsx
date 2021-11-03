@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type AppLayoutProps from 'next/app';
 import React, { ReactNode } from 'react';
 import '../styles/globals.css';
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 
 // adapted from https://github.com/ippo012/nextjs-starter/blob/master/src/pages/_app.tsx
 
