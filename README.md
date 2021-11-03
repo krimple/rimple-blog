@@ -8,3 +8,32 @@ Features:
 * Querying of GraphCMS data to render page using `graphql-request` lightweight library.
 * Passing of environment key and url for GraphCMS with .env file (hence not checked in)
 
+Setup with Yarn:
+
+```
+$ yarn
+```
+
+Run in development mode:
+
+```
+yarn run dev
+```
+
+Build static pages
+
+```
+yarn run build
+```
+
+Serve static pages / next services
+
+``` 
+yarn run start
+```
+
+Graphql Schema:
+
+```graphql
+
+```
